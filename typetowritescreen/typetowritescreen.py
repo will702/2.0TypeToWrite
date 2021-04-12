@@ -130,43 +130,35 @@ class TypeToWriteScreen(Screen):
                 pass
 
         def see_recent_images(self):
-            try:
-                self.get_permission()
-                try:
-                    if platform == 'android':
 
-                        self.list_of_files = glob.glob(f'{os.getcwd()}/TypeToWritePhotos/*.png')  # * means all if need specific format then *.csv
-                        self.latest_file = max(self.list_of_files, key=os.path.getctime)
-                        self.ids.screen2.image1.source = self.latest_file
-                    if platform != 'android':
-                        self.list_of_files = glob.glob('./*.png')  # * means all if need specific format then *.csv
-                        print(self.list_of_files)
-                        self.latest_file = max(self.list_of_files, key=os.path.getctime)
-                        self.ids.screen2.image1.source = self.latest_file
+            self.get_permission()
+
+            if platform == 'android':
+
+                self.list_of_files = glob.glob('/sdcard/DCIM/TypeToWrite/*.png')  # * means all if need specific format then *.csv
+                self.latest_file = max(self.list_of_files, key=os.path.getctime)
+                self.ids.screen2.image1.source = self.latest_file
 
 
-                except:
-                    pass
-            except:
-                pass
+
 
         def search_kertas(self):
             try:
                 if self.ids.screen3.spinn12.text == '1':
-                    self.ids.screen2.image1.source  = 'bahan/bahan_1.jpg'
+                    self.ids.screen2.image1.source  = f'{os.getcwd()}/bahan/bahan_1.jpg'
                     self.see_kertas10()
 
                 if self.ids.screen3.spinn12.text == '2':
-                    self.ids.screen2.image1.source = 'bahan/bahan_2(1).jpg'
+                    self.ids.screen2.image1.source = f'{os.getcwd()}/bahan/bahan_2(1).jpg'
                     self.see_kertas10()
                 if self.ids.screen3.spinn12.text == '3':
-                    self.ids.screen2.image1.source = 'bahan/bahan_3.jpg'
+                    self.ids.screen2.image1.source = f'{os.getcwd()}/bahan/bahan_3.jpg'
                     self.see_kertas10()
                 if self.ids.screen3.spinn12.text == '4':
-                    self.ids.screen2.image1.source = 'bahan/bahan_4.jpg'
+                    self.ids.screen2.image1.source = f'{os.getcwd()}/bahan/bahan_4.jpg'
                     self.see_kertas10()
                 if self.ids.screen3.spinn12.text == '5':
-                    self.ids.screen2.image1.source = 'bahan/bahan_5.jpg'
+                    self.ids.screen2.image1.source = f'{os.getcwd()}/bahan/bahan_5.jpg'
                     self.see_kertas10()
             except:
                 pass

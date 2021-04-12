@@ -35,7 +35,7 @@ version = 1.2
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3,kivy==2.0.0rc1,requests,certifi,urllib3,chardet,idna,plyer,google_trans_new,pillow,kivmob,android,pyjnius,kivymd
+requirements = python3,kivy==2.0.0rc1,requests,certifi,urllib3,chardet,idna,plyer,google_trans_new,pillow,kivmob,android,pyjnius,kivymd,gingerit
 
 
 # (str) Custom source folders for requirements
@@ -85,8 +85,7 @@ fullscreen = 0
 #android.presplash_color = #FFFFFF
 
 # (list) Permissions
-android.permissions = INTERNET, ACCESS_NETWORK_STATE ,CAMERA
-
+android.permissions = INTERNET, ACCESS_NETWORK_STATE
 # (int) Target Android API, should be as high as possible.
 #android.api = 28
 
