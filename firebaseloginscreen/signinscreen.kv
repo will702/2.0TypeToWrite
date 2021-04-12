@@ -34,6 +34,7 @@
                     size_hint_x : None
                     icon_right:'gmail'
                     width : 600
+
                     pos_hint: {"center_x": .5, "top": .6}
                     font_size : 35
                     hint_text:'Email'
@@ -42,17 +43,20 @@
                     size_hint_y : None
                     height : 0
                 MDTextField:
+
                     id: password
                     size_hint_x : None
+
                     icon_right:'eye-off'
                     width : 600
                     pos_hint: {"center_x": .5, "top": .6}
                     font_size : 35
                     password:True
+
                     hint_text:'Password'
                     required:True
 
-                MDRoundFlatButton:
+                MDRaisedButton:
                     text: "Reset"
                     size_hint: None,None
                     width:600
@@ -65,7 +69,7 @@
                         root.parent.parent.display_loading_screen()
 
 
-                MDRoundFlatButton:
+                MDRaisedButton:
 
                     text: "Sign In"
 
@@ -78,7 +82,7 @@
                         sign_in_button.disabled = True
                         root.parent.parent.display_loading_screen()
 
-                MDRoundFlatButton:
+                MDRaisedButton:
                     id:sign_in_button
                     text: "Sign up"
                     size_hint: None,None
