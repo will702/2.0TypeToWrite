@@ -1,0 +1,91 @@
+<SignUpScreen>:
+    FloatLayout:
+
+
+        MDScreen :
+
+            md_bg_color : [35/255,59/255,54/255,1]
+            MDCard:
+                border_radius: 20
+                radius: [15]
+                size_hint : 0.8,0.6
+
+                pos_hint : {"center_x":.5,"center_y":.5}
+
+
+                padding : 20
+                spacing : 30
+                orientation : "vertical"
+
+                MDLabel :
+                    text : 'SIGN-UP'
+                    font_style : 'Button'
+                    font_size:40
+                    halign:'center'
+                    size_hint_x : 0.5
+                    pos_hint:{'center_x':0.5}
+                MDTextField:
+                    id: email
+                    size_hint_x : None
+                    icon_right:'gmail'
+                    width : 600
+                    pos_hint: {"center_x": .5, "top": .6}
+                    font_size : 35
+                    hint_text:'Email'
+                    required:True
+
+
+                MDTextField:
+                    id: password
+                    size_hint_x : None
+                    icon_right:'eye-off'
+                    width : 600
+                    pos_hint: {"center_x": .5, "top": .6}
+                    font_size : 35
+                    required:True
+
+                    hint_text:'Password'
+
+                MDRoundFlatButton:
+                    text: "SIGN-UP"
+                    font_size:15
+                    size_hint: .4 ,None
+                    width : 600
+                    pos_hint: {"center_x": .5, "top": .15}
+                    size_hint:None,None
+                    on_release:
+                        # Need to refer to the FirebaseLoginScreen
+                        root.parent.parent.sign_up(email.text, password.text)
+                        sign_in_button.opacity = 0
+                        sign_in_button.disabled = True
+                        root.parent.parent.display_loading_screen()
+                        root.parent.parent.ids.sign_in_screen.ids.email.text = email.text
+                        root.parent.parent.ids.sign_in_screen.ids.password.text = password.text
+
+                MDRoundFlatButton:
+                    id: sign_in_button
+                    text: "SIGN-IN"
+                    size_hint: None,None
+                    pos_hint: {"center_x": .5, "center_y": .25}
+                    opacity: 0
+                    disabled: True
+                    on_release:
+                        root.parent.current = "sign_in_screen"
+                        root.parent.parent.ids.sign_in_screen.ids.email.text = email.text
+                        root.parent.parent.ids.sign_in_screen.ids.password.text = password.text
+                Widget :
+                    size_hint_y : None
+                    height : 30
+                Widget :
+                    size_hint_y : None
+                    height : 30
+                Widget :
+                    size_hint_y : None
+                    height : 30
+        MDToolbar:
+            md_bg_color: 0,0,0,0
+            elevation: 0
+
+            pos_hint: {"top": 1}
+            left_action_items: [['chevron-left', lambda x: root.go_back()]]
+            specific_text_color: app.theme_cls.accent_color

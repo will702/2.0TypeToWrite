@@ -1,0 +1,74 @@
+<WelcomeScreen>:
+    FloatLayout:
+        MDScreen:
+            md_bg_color : [35/255,59/255,54/255,1]
+            MDCard:
+                border_radius: 20
+                radius: [15]
+                size_hint : 0.8,0.6
+
+                pos_hint : {"center_x":.5,"center_y":.5}
+
+
+                padding : 20
+                spacing : 30
+                orientation : "vertical"
+                MDLabel :
+                    text : 'MAIN-PAGE'
+                    font_style : 'Button'
+                    font_size:40
+                    halign:'center'
+                    size_hint_x : 0.5
+                    pos_hint:{'center_x':0.5}
+
+
+
+                MDRoundFlatButton:
+                    id: log_in_button
+                    size_hint_x: 0.7
+
+
+                
+
+
+
+                    pos_hint: {"center_x":0.5}
+                    text: "Sign In"
+
+                    on_release:
+                        root.parent.current = "sign_in_screen"
+                        root.parent.parent.get_permission()
+
+
+                Widget :
+                    size_hint_y : None
+                    height : 0
+                MDRoundFlatButton:
+                    id: create_account_button
+                    size_hint : 0.7,None
+                    pos_hint:{"center_x":0.5}
+                    text: "Sign Up"
+                    on_release:
+                        root.parent.current = "sign_up_screen"
+                        root.parent.parent.get_permission()
+
+
+                Widget :
+                    size_hint_y : None
+                    height : 30
+                Widget :
+                    size_hint_y : None
+                    height : 30
+                Widget :
+                    size_hint_y : None
+                    height : 30
+                Widget :
+                    size_hint_y : None
+                    height : 30
+                Widget :
+                    size_hint_y : None
+                    height : 30
+                Widget :
+                    size_hint_y : None
+                    height : 30
+

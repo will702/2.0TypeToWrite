@@ -1,0 +1,25 @@
+<TypeToWriteScreen>:
+    #:import utils kivy.utils
+    background: "typetowritescreen/background.jpg"
+    canvas.before:
+        Color:
+            rgba:utils.get_color_from_hex("#18c98b")
+        Rectangle:
+            size: self.size
+            pos: self.pos
+            source:root.background
+
+    ScreenManager:
+        id: screen_manager
+        Screen1:
+            id:screen1
+            name: "screen1"
+        Screen2:
+            id:screen2
+            name: "screen2"
+        Screen3:
+            id:screen3
+            name:'screen3'
+
+
+

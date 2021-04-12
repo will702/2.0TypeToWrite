@@ -1,0 +1,29 @@
+
+ScreenManager:
+    id: screen_manager
+    #:import TypeToWriteScreen typetowritescreen.typetowritescreen.TypeToWriteScreen
+    #:import FirebaseLoginScreen firebaseloginscreen.firebaseloginscreen.FirebaseLoginScreen
+    FirebaseLoginScreen:
+        id:firebaseloginscreen
+        name:"firebaseloginscreen"
+        
+        # This should be YOUR web_api_key
+
+        on_login_success:
+
+
+            if self.login_state == 'in': app.local_id = self.localId
+            #If login state = in it will make local_id as self.local id
+            if self.login_state == 'in': app.user_idToken = self.idToken
+
+            if self.login_state == 'in': screen_manager.current = 'typetowritescreen'
+            #if the login and signup correct it will redirect you to screen1
+
+
+
+    TypeToWriteScreen:
+
+        id:typetowritescreen
+        name:"typetowritescreen"
+
+

@@ -1,0 +1,171 @@
+<Screen1>:
+
+    username: username
+
+    kelas:kelas
+    isi:isi
+    spinn:spinn
+    spinn1:spinn1
+
+    MDToolbar:
+        title:"Dashboard"
+        pos_hint:{'top':1}
+        size_hint_y :0.05
+        elevation:10
+        left_action_items: [["menu",lambda x:nav_drawer.set_state()]]
+
+
+
+
+
+
+
+
+
+
+    MDTextField:
+
+        id: kelas
+        hint_text: "Kelas (bisa di kosongkan)"
+        helper_text_mode: "on_focus"
+        width:450
+        size_hint_x:None
+
+        pos_hint:{'center_x': 0.3,'center_y':0.8}
+
+
+    MDTextField:
+        id:username
+        hint_text: "Nama (bisa di kosongkan)"
+        helper_text_mode: "on_focus"
+
+        width:450
+        size_hint_x:None
+
+        pos_hint:{'center_x': 0.3,'center_y':0.85}
+
+
+
+    MDTextFieldRect:
+        id:isi
+        size_hint :0.9,0.4
+        hint_text:"Isi Yg Mau Ditulis"
+        pos_hint:{'center_x': 0.5,'center_y':0.5}
+        multiline:True
+    Spinner:
+        id:spinn
+        size_hint_x : None
+        width:250
+        height:50
+        size_hint_y:None
+        text: 'Font'
+
+
+        pos_hint:{'center_x': 0.77,'center_y':0.8}
+        values: '1', '2', '3'
+
+
+
+
+
+
+
+
+    Spinner:
+        id:spinn1
+        size_hint_x : None
+        width:250
+        height:50
+        size_hint_y:None
+        text: 'Kertas'
+
+
+
+        values: '1', '2', '3','4','5'
+
+        pos_hint:{'center_x': 0.77,'center_y':0.85}
+
+
+
+
+
+
+
+
+    MDRaisedButton:
+        text: "Change To Handwriting"
+        pos_hint: {'center_x': 0.3,'center_y':0.2}
+        size_hint_x:None
+
+        on_release:
+
+            root.parent.parent.check_data_login()
+            app.loading_screen()
+
+
+
+    MDFlatButton:
+
+        text:'See Recent Images'
+        pos_hint:{'center_x':0.3,'center_y':0.1}
+
+        on_release:
+            root.parent.parent.see_recent_images()
+            app.loading_screen()
+            root.parent.parent.see_kertas10()
+
+    MDFlatButton:
+        text: "Translate"
+        pos_hint: {'center_x': 0.7,'center_y':0.1}
+        size_hint_x:None
+
+        on_release:
+
+            root.parent.parent.translation()
+            app.loading_screen()
+
+    MDRaisedButton:
+        text:"Correct Your Grammar"
+        pos_hint: {'center_x': 0.7,'center_y':0.2}
+        size_hint_x:None
+        on_release:
+            root.parent.parent.grammar_check()
+            app.loading_screen()
+
+    MDNavigationDrawer:
+        id:nav_drawer
+
+
+
+        ContentNavigationDrawer:
+            #Make A Tables For Button  Below
+            spacing:'8dp'
+            padding:'8dp'
+            orientation:'vertical'
+
+            ItemDrawer:
+
+            MDIconButton:
+                icon:"logout"
+
+                on_release:app.show_dialog()
+                pos_hint:{'center_x':0.1,'center_y':0.9}
+
+            MDIconButton:
+                icon:"book-open"
+
+                on_release:root.parent.parent.change_screen("screen3")
+                pos_hint:{'center_x':0.1,'center_y':0.8}
+
+
+
+
+
+
+
+
+
+
+
+
+
