@@ -1,0 +1,4 @@
+kivy 
+kivymd 
+google-trans-new 
+kivmob 
