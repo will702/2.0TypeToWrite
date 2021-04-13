@@ -145,20 +145,20 @@ class TypeToWriteScreen(Screen):
         def search_kertas(self):
             try:
                 if self.ids.screen3.spinn12.text == '1':
-                    self.ids.screen2.image1.source  = f'{os.getcwd()}/bahan/bahan_1.jpg'
+                    self.ids.screen2.image1.source  = 'https://raw.githubusercontent.com/will702/ImageBahan/main/bahan_1.jpg'
                     self.see_kertas10()
 
                 if self.ids.screen3.spinn12.text == '2':
-                    self.ids.screen2.image1.source = f'{os.getcwd()}/bahan/bahan_2(1).jpg'
+                    self.ids.screen2.image1.source = 'https://raw.githubusercontent.com/will702/ImageBahan/main/bahan_2(1).jpg'
                     self.see_kertas10()
                 if self.ids.screen3.spinn12.text == '3':
-                    self.ids.screen2.image1.source = f'{os.getcwd()}/bahan/bahan_3.jpg'
+                    self.ids.screen2.image1.source = 'https://raw.githubusercontent.com/will702/ImageBahan/main/bahan_3.jpg'
                     self.see_kertas10()
                 if self.ids.screen3.spinn12.text == '4':
-                    self.ids.screen2.image1.source = f'{os.getcwd()}/bahan/bahan_4.jpg'
+                    self.ids.screen2.image1.source = 'https://raw.githubusercontent.com/will702/ImageBahan/main/bahan_4(3).jpg'
                     self.see_kertas10()
                 if self.ids.screen3.spinn12.text == '5':
-                    self.ids.screen2.image1.source = f'{os.getcwd()}/bahan/bahan_5.jpg'
+                    self.ids.screen2.image1.source = 'https://raw.githubusercontent.com/will702/ImageBahan/main/bahan_5.jpg'
                     self.see_kertas10()
             except:
                 pass
