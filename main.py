@@ -66,6 +66,7 @@ class OneApp(MDApp):
         self.screen.ids.firebaseloginscreen.debug = False
         self.screen.ids.firebaseloginscreen.remember_user = True
         self.screen.ids.firebaseloginscreen.require_email_verification = True
+        self.screen.ids.typetowritescreen.ids.background = 'background.jpg'
 
         return self.screen
         # Showing Ads To The Screen
