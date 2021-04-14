@@ -19,8 +19,8 @@ class OneApp(MDApp):
     def __init__(self):
 
         super().__init__()
-        self.theme_cls.primary_palette =  'BlueGray'
-        self.theme_cls.primary_hue = '500'
+        self.theme_cls.primary_palette =  'Orange'
+
         self.theme_cls.primary_style = 'Light'
         self.title = 'Type To Write'
 
