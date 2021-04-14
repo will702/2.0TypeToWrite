@@ -9,7 +9,9 @@ from kivy.clock import Clock
 # Hiding Debugs
 from kivymd.uix.dialog import MDDialog
 from kivymd.uix.button import MDFlatButton,MDRaisedButton
+import os.path
 if platform == 'macosx':
+
     Window.size = (450, 750)
 else:
     pass
@@ -55,6 +57,8 @@ class OneApp(MDApp):
         self.ads.new_banner('ca-app-pub-1818238534900904/4048546717', top_pos=False)
         # Requesting New Ads
         self.ads.request_banner()
+
+        self.folder = os.path.dirname(os.path.realpath(__file__))+'/bahan'
 
         self.ads.show_banner()
         self.screen = Builder.load_file('main.kv')

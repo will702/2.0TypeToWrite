@@ -45,7 +45,6 @@ class TypeToWriteScreen(Screen):
         #     if button.icon == 'google':
         #         pass
 
-
         def default(self,*args):
 
             self.ids.screen1.spinn.text = '1' #Make Value To Default
