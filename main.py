@@ -9,7 +9,7 @@ from kivy.clock import Clock
 # Hiding Debugs
 from kivymd.uix.dialog import MDDialog
 from kivymd.uix.button import MDFlatButton,MDRaisedButton
-import os.path
+
 if platform == 'macosx':
 
     Window.size = (450, 750)
@@ -58,14 +58,17 @@ class OneApp(MDApp):
         # Requesting New Ads
         self.ads.request_banner()
 
-        self.folder = os.path.dirname(os.path.realpath(__file__))+'/bahan'
-
         self.ads.show_banner()
         self.screen = Builder.load_file('main.kv')
         self.screen.ids.firebaseloginscreen.web_api_key = "AIzaSyBmrGpiwimYZ-HT_BSesv4gMjuPJcG3omM"
         self.screen.ids.firebaseloginscreen.debug = False
         self.screen.ids.firebaseloginscreen.remember_user = True
         self.screen.ids.firebaseloginscreen.require_email_verification = True
+        self.screen.ids.typetowritescreen.ids.screendisplay.ids.tile1.source ='bahan/bahan_1.jpg'
+        self.screen.ids.typetowritescreen.ids.screendisplay.ids.tile2.source = 'bahan/bahan_2(1).jpg'
+        self.screen.ids.typetowritescreen.ids.screendisplay.ids.tile3.source = 'bahan/bahan_3.jpg'
+        self.screen.ids.typetowritescreen.ids.screendisplay.ids.tile4.source = 'bahan/bahan_4(3).jpg'
+        self.screen.ids.typetowritescreen.ids.screendisplay.ids.tile5.source = 'bahan/bahan_5g.jpg'
         return self.screen
         # Showing Ads To The Screen
 
