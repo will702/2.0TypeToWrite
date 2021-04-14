@@ -1,20 +1,7 @@
 <Screen3>:
 
-    spinn12:spinn12
-
-    Spinner:
-        id:spinn12
-        #Multiple Choices About Paper variant
-        size_hint_x : None
-
-        width:250
-        height:50
-        size_hint_y:None
-        text: 'Liat Kertas'
 
 
-        pos_hint:{'center_x': 0.77,'center_y':0.1}
-        values: '1', '2', '3','4','5'
 
     MDRaisedButton:
         #Back To Main App
@@ -24,7 +11,7 @@
         on_release: root.go_back()
     MDRaisedButton:
         #Search Paper By Name
-        text: "Search"
+        text: "Liat Kertas"
         pos_hint: {'center_x': 0.5,'center_y':0.1}
         size_hint_x:None
         on_release: root.parent.parent.search_kertas()

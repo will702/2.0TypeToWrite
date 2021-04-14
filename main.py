@@ -3,13 +3,16 @@ from kivy.lang import Builder
 
 from kivmob import KivMob
 from kivy.core.window import Window
-
+from kivy.utils import platform
 # Securing Debugable Apps
 from kivy.clock import Clock
 # Hiding Debugs
 from kivymd.uix.dialog import MDDialog
 from kivymd.uix.button import MDFlatButton,MDRaisedButton
-Window.size = (450, 750)
+if platform == 'macosx':
+    Window.size = (450, 750)
+else:
+    pass
 class OneApp(MDApp):
     def __init__(self):
 

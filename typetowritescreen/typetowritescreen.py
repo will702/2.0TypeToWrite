@@ -27,10 +27,11 @@ Builder.load_file(folder + "/screen2.kv")
 Builder.load_file(folder + "/screen3.kv")
 Builder.load_file(folder + "/typetowritescreen.kv")
 
-
+Builder.load_file(folder + "/screendisplay.kv")
 from  screen1 import Screen1
 from screen2 import Screen2
 from screen3 import Screen3
+from screendisplay import ScreenDisplay
 class TypeToWriteScreen(Screen):
     try:
         #Put Screen2 On Main Layout
@@ -143,25 +144,7 @@ class TypeToWriteScreen(Screen):
 
 
         def search_kertas(self):
-            try:
-                if self.ids.screen3.spinn12.text == '1':
-                    self.ids.screen2.image1.source  = 'https://raw.githubusercontent.com/will702/ImageBahan/main/bahan_1.jpg'
-                    self.see_kertas10()
-
-                if self.ids.screen3.spinn12.text == '2':
-                    self.ids.screen2.image1.source = 'https://raw.githubusercontent.com/will702/ImageBahan/main/bahan_2(1).jpg'
-                    self.see_kertas10()
-                if self.ids.screen3.spinn12.text == '3':
-                    self.ids.screen2.image1.source = 'https://raw.githubusercontent.com/will702/ImageBahan/main/bahan_3.jpg'
-                    self.see_kertas10()
-                if self.ids.screen3.spinn12.text == '4':
-                    self.ids.screen2.image1.source = 'https://raw.githubusercontent.com/will702/ImageBahan/main/bahan_4(3).jpg'
-                    self.see_kertas10()
-                if self.ids.screen3.spinn12.text == '5':
-                    self.ids.screen2.image1.source = 'https://raw.githubusercontent.com/will702/ImageBahan/main/bahan_5.jpg'
-                    self.see_kertas10()
-            except:
-                pass
+            self.change_screen('screendisplay')
         def close_dialog2(self, obj):
             try:
                 self.dialog2.dismiss()
