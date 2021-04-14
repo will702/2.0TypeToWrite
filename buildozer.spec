@@ -43,7 +43,7 @@ requirements = python3,kivy==2.0.0rc1,requests,certifi,urllib3,chardet,idna,plye
 # requirements.source.kivy = ../../kivy
 
 # (list) Garden requirements
-# garden_requirements = .
+garden_requirements = mapview
 
 # (str) Presplash of the application
 presplash.filename = %(source.dir)s/data/presplash.png

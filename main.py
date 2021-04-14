@@ -19,7 +19,9 @@ class OneApp(MDApp):
     def __init__(self):
 
         super().__init__()
-        self.theme_cls.primary_palette =  'Orange'
+        self.theme_cls.primary_palette =  'BlueGray'
+        self.theme_cls.primary_hue = '500'
+        self.theme_cls.primary_style = 'Light'
         self.title = 'Type To Write'
 
 
@@ -64,11 +66,7 @@ class OneApp(MDApp):
         self.screen.ids.firebaseloginscreen.debug = False
         self.screen.ids.firebaseloginscreen.remember_user = True
         self.screen.ids.firebaseloginscreen.require_email_verification = True
-        self.screen.ids.typetowritescreen.ids.screendisplay.ids.tile1.source ='bahan/bahan_1.jpg'
-        self.screen.ids.typetowritescreen.ids.screendisplay.ids.tile2.source = 'bahan/bahan_2(1).jpg'
-        self.screen.ids.typetowritescreen.ids.screendisplay.ids.tile3.source = 'bahan/bahan_3.jpg'
-        self.screen.ids.typetowritescreen.ids.screendisplay.ids.tile4.source = 'bahan/bahan_4(3).jpg'
-        self.screen.ids.typetowritescreen.ids.screendisplay.ids.tile5.source = 'bahan/bahan_5g.jpg'
+
         return self.screen
         # Showing Ads To The Screen
 
